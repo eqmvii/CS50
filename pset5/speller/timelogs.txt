@@ -1,0 +1,62 @@
+===Austin Powers: THEM, first:
+WORDS MISSPELLED: 644
+WORDS IN DICTIONARY:  143091
+WORDS IN TEXT:        19190
+TIME IN load:         0.03
+TIME IN check:        0.01
+TIME IN size:         0.00
+TIME IN unload:       0.01
+TIME IN TOTAL:        0.05
+
+===Austin Powers Us: 
+WORDS MISSPELLED:     644
+WORDS IN DICTIONARY:  143091
+WORDS IN TEXT:        19190
+TIME IN load:         0.09
+TIME IN check:        0.01
+TIME IN size:         0.00
+TIME IN unload:       0.05
+TIME IN TOTAL:        0.16
+
+===Austin Powers Us Optimized: 
+WORDS MISSPELLED:     644
+WORDS IN DICTIONARY:  143091
+WORDS IN TEXT:        19190
+TIME IN load:         0.08
+TIME IN check:        0.01
+TIME IN size:         0.00
+TIME IN unload:       0.05
+TIME IN TOTAL:        0.14
+
+===Austin Powers Hash Table (26 bucket alphabetical): 
+WORDS MISSPELLED:     644
+WORDS IN DICTIONARY:  143091
+WORDS IN TEXT:        19190
+TIME IN load:         3.20
+TIME IN check:        0.44
+TIME IN size:         0.00
+TIME IN unload:       0.00
+TIME IN TOTAL:        3.64
+
+===Austin Powers Hash Table (rolled my own, large hash table): 
+WORDS MISSPELLED:     644
+WORDS IN DICTIONARY:  143091
+WORDS IN TEXT:        19190
+TIME IN load:         0.10
+TIME IN check:        0.01
+TIME IN size:         0.00
+TIME IN unload:       0.02
+TIME IN TOTAL:        0.13
+
+===Shakespeare Staff Solution: 45,691 mispelled and 904,612 total words in 0.51 seconds
+
+===Shakespeare Initial Solution: 45,691 mispelled and 904,612 total words in 0.50 seconds 
+
+===Shakespeare Optimized Solution: 45,691 mispelled and 904,612 total words in 0.46 seconds
+
+===Shakespeare Hash-Custom Formula: 45,691 mispelled and 904,612 total words in 0.45 seconds
+
+===Shakespeare Hash-26 Bucket(first letter only): 45,691 mispelled and 904,612 total words in 27.20 seconds
+
+===Shakespeare Linked List: 45,691 mispelled and 904,612 total words in 498.40 seconds
+

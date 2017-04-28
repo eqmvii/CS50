@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<p>Select a button above to do something</p>
+<br>
+<p>You currently have <strong>{{cash}}</strong> in cash reserves</p>
+<h2>These are your stock holdings:</h2>
+<br>
+
+<div>
+<table class="table table-striped">
+<tr>
+    <th><strong>Ticker</Strong></th>
+    <th><strong>Shares</strong></th>
+    <th><strong>Share Price</strong></th>
+    <th><strong>Total Value</strong></th>
+</tr>
+{% for stock in portfolio %}
+<tr>
+    <td>{{stock.ticker}} </td>
+    <td>{{stock.shares}}</td>
+    <td>{{stock.price}}</td>
+    <td>{{stock.total}}</td>
+</tr>
+{% endfor %}
+</table> 
+</div>
+<br>
+<div class="center-block col-md-4">
+    </div>
+
+<div class="center-block col-md-4">
+<table class="table ">
+    <tr>
+        <th>Total Stock Value</th>
+        <th>Cash Reserves</th>
+        <th>Total Asset Value</th>
+    </tr>
+    <tr>
+        <td>{{shareWorth}}</td>
+        <td>{{cash}}</td>
+        <td>{{netWorth}}</td>
+    </tr>
+</table>
+</div>
+<div class="center-block col-md-4">
+    </div>
+{% endblock %}

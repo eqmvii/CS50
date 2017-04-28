@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Cash
+{% endblock %}
+
+{% block main %}
+
+<p>You have {{ cash }} in cash. Add cash below (no commas or dollar sign, please)</p>
+    <form action="{{ url_for('addcash') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="cashtoadd" placeholder="Amount of cash to add" type="text"/>
+            </div>
+                <button class="btn btn-default" type="submit">Add Cash!!!</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

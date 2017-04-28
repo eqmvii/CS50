@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transaction History
+{% endblock %}
+
+{% block main %}
+<p>Select a button above to do something</p>
+<br>
+<p>You currently have {{cash}} cash in your account</p>
+<p>Stock transaction history:</p>
+
+<table class="table table-striped">
+    <tr>
+        <th>Date </th>
+        <th>Ticker</th>
+        <th>Shares bought or sold</th>
+        <th>Share Price</th>
+        <th>Total Price</th>
+    </tr>
+{% for transaction in transactions %}
+<tr><td>{{transaction.timestamp}}</td><td>{{transaction.ticker}}</td><td>{{transaction.shares}}</td><td>{{transaction.price}}</td><td>{{transaction.total}}</td></tr>
+{% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,63 @@
+(1) What’s stdint.h?
+
+A header file for working with more particular kind of integers in C, for example, integers with specific sizes.
+
+(2) What’s the point of using uint8_t, uint32_t, int32_t, and uint16_t in a program?
+
+By keeping integer sizes constant, more direct manipulations of data/memory can be possible, since you know the geometry it will eventually have.
+
+It also means sizes will be constant across different devices/compilers/systems.
+
+(3) How many bytes is a BYTE, a DWORD, a LONG, and a WORD, respectively?
+
+typedef uint8_t  BYTE; -> so 1 bytes
+typedef uint32_t DWORD; -> so 4 bytes 
+typedef int32_t  LONG; -> so 4 bytes
+typedef uint16_t WORD; -> so 2 bytes
+
+(4) What (in ASCII, decimal, or hexadecimal) must the first two bytes of any BMP file be? Leading bytes used to identify file formats (with high probability) are generally called "magic numbers."
+
+42 4D [BM]
+0x42 0x4D in hexadecimal, same as BM in ASCII
+
+See this line of code in copy.c, ensuring the opened file has the BM magic number: bf.bfType != 0x4d42
+
+(5) What’s the difference between bfSize and biSize?
+
+bfSize is located in the BITMAPFILEHEADER and is the /total/ size, in bytes, of the bitmap file.
+
+biSize, located in BITMAPINFOHEADER, is just the number of bytes required by its structure. 
+It is used to help locate the color table, by implying the end of the header structure in memory.
+
+(6) What does it mean if biHeight is negative?
+
+If biHeight is negative, the bitmap is a top-down DIB and its origin is the upper-left corner.
+If biHeight is negative, indicating a top-down DIB, biCompression must be either BI_RGB or BI_BITFIELDS. Top-down DIBs cannot be compressed.
+
+(7) What field in BITMAPINFOHEADER specifies the BMP’s color depth (i.e., bits per pixel)?
+
+Within BITMAPINFOHEADER, biBitCount specifies the number of bits-per-pixel. 
+
+(8) Why might fopen return NULL in lines 24 and 32 of copy.c?
+
+If it failed to open the file. 
+fopen returns a FILE pointer. Otherwise, NULL is returned and the global variable errno is set to indicate the error.
+
+(9) Why is the third argument to fread always 1 in our code?
+
+Because there is only one element.
+nmemb − This is the number of elements, each one with a size of size bytes.
+
+(10) What value does line 65 of copy.c assign to padding if bi.biWidth is 3?
+
+1 x sizeof(RGBTRIPLE)) - because it needs one 'unit' of padding
+
+(11) What does fseek do?
+
+Changes the current location of the read/write stream within the file. 
+Or as tutorial point says, sets the file position of the stream to the given offset.
+
+(12) What is SEEK_CUR?
+
+SEEK_CUR is given to the int whence parameter of fseek, and is a constant (one of three choices) that points to the current position of the file pointer
+SEEK_CUR Specifies that offset is a count of characters from the current file position. This count may be positive or negative.

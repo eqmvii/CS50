@@ -1,0 +1,1 @@
+My completed code for CS50 Fall 2016 edition (C, Python, and JavaScript)

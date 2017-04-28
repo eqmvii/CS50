@@ -1,0 +1,32 @@
+0.  What is pneumonoultramicroscopicsilicovolcanoconiosis?
+
+A word of max length, in the comments of dictionary.h
+
+1.  According to its man page, what does getrusage do?
+
+Returns the resource usage of the calling process, children, or thread, including things like the ammount of CPU time used.
+
+2.  Per that same man page, how many members are in a variable of type struct rusage?
+
+16
+
+3.  Why do you think we pass before and after by reference (instead of by value) to calculate, even though we’re not changing their contents?
+
+Copying its contents will slow the program down
+
+4.  Explain as precisely as possible, in a paragraph or more, how main goes about reading words from a file. In other words, convince us that you indeed understand how that function’s for loop works.
+
+The for loop reads a character from the current cursor position, makes sure that wasn't an end of file character, and then executes the loop's code. 
+Once the code has been executed, it gets the next character again using fgetc.
+
+The code inside of the loop creates a word from the characters one at a time, skipping letters and overly long words (which it takes what it can of).
+Then it calls the dictionary check and time keeping functionality.
+
+5.  Why do you think we used fgetc to read each word’s characters one at a time rather than use fscanf with a format string like "%s" to read whole words at a time? Put another way, what problems might arise by relying on fscanf alone?
+
+fscanf has some backed in assumptions about what a word will look like and how they will be spaced. 
+By going character by character, we can stop short of max and handle special characters plus line breaks/spaces precisely as we like. 
+
+6.  Why do you think we declared the parameters for check and load as const (which means "constant")?
+
+Because the dictionary in particular might be massive, and c probably stores read-only data more concisely. Also it happens to be read only data so there's no reason to ever want to allow for changing of it.

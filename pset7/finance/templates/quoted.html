@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Retrieve a Stock Quote
+{% endblock %}
+
+{% block main %}
+<p>Here's your stock quote ya filthy animal: </p>
+<p></p><Strong>Name: </Strong> {{ name }} <strong><p>
+<p>Symbol: </strong> {{ symbol }} </p>
+<p><strong> Price: </strong>${{ price }}</p>
+<p> Now go away.</p>
+{% endblock %}
